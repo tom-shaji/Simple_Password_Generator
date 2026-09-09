@@ -216,6 +216,8 @@ def main() -> None:
         # ── Step 4: go again? ───────────────────────────────────────────────
         print()
         print_separator()
+        if get_yes_no("View session history?"):
+            show_history(history)
         if not get_yes_no("Generate another password?"):
             noun = "password" if count == 1 else "passwords"
             print(f"{GREEN}Generated {count} {noun} this session. Stay secure!{RESET}\n")
