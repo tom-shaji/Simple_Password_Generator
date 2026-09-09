@@ -166,6 +166,7 @@ def generate_password(length: int, char_pools: dict[str, str]) -> str:
 
 def main() -> None:
     print(BANNER)
+    count = 0  # passwords generated this session
 
     while True:
         # ── Step 1: length ──────────────────────────────────────────────────
@@ -175,6 +176,7 @@ def main() -> None:
         char_pools = get_character_options()
 
         # ── Step 3: generate & display ──────────────────────────────────────
+        count    += 1
         password  = generate_password(length, char_pools)
         strength  = calculate_strength(password)
         pool_size = len(set("".join(char_pools.values())))
