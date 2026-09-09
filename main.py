@@ -45,6 +45,13 @@ BANNER = f"""{CYAN}{BOLD}
 """
 
 
+def copy_hint() -> None:
+    """Print an OS-aware keyboard shortcut hint for copying the password."""
+    import platform
+    key = "Cmd+C" if platform.system() == "Darwin" else "Ctrl+C"
+    print(f"   {YELLOW}Tip: highlight the password above and press {key} to copy.{RESET}")
+
+
 def print_separator() -> None:
     """Print a visual divider line to the terminal."""
     print(f"{CYAN}" + "-" * 45 + f"{RESET}")
