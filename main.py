@@ -22,7 +22,8 @@ BOLD   = "\033[1m"
 RESET  = "\033[0m"
 
 # ── Configuration ──────────────────────────────────────────────────────────────
-MIN_LENGTH = 4   # minimum allowed password length
+MIN_LENGTH = 4    # minimum allowed password length
+MAX_LENGTH = 128  # maximum allowed password length
 
 BANNER = f"""{CYAN}{BOLD}
 +---------------------------------------+
@@ -41,6 +42,9 @@ def get_password_length() -> int:
         length = int(raw)
         if length < MIN_LENGTH:
             print(f"{RED}✖  Length must be at least {MIN_LENGTH} characters.{RESET}")
+            continue
+        if length > MAX_LENGTH:
+            print(f"{RED}✖  Length must be at most {MAX_LENGTH} characters.{RESET}")
             continue
         return length
 
