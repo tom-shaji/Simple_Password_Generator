@@ -4,6 +4,9 @@ Uses Python's built-in `random` and `string` modules.
 Run with: python main.py
 """
 
+__version__ = "1.0.0"
+__author__  = "tom-shaji"
+
 import io
 import random
 import string
