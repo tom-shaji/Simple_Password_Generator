@@ -112,6 +112,19 @@ Simple_Password_Generator/
 
 ---
 
+## Strength Indicator
+
+Passwords are scored on length and character variety:
+
+| Rating | Meaning |
+|--------|---------|
+| **Weak** | Short or single character type |
+| **Medium** | Moderate length, some variety |
+| **Strong** | Good length with several types |
+| **Very Strong** | 16+ chars with high variety |
+
+---
+
 ## How It Works
 
 1. **Get length** — validates that input is a positive integer ≥ 4.  
