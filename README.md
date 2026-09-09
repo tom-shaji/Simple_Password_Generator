@@ -66,9 +66,9 @@ python main.py
 ## Usage Example
 
 ```
-╔═══════════════════════════════════════╗
-║        🔐  Password Generator         ║
-╚═══════════════════════════════════════╝
++---------------------------------------+
+|       [*]  Password Generator         |
++---------------------------------------+
 
 Enter desired password length (min 4): 16
 
@@ -76,16 +76,21 @@ Choose character types to include:
   [1] Uppercase letters (A-Z)
   [2] Lowercase letters (a-z)
   [3] Numbers        (0-9)
-  [4] Special chars  (!@#…)
+  [4] Special chars  (!@#~)
 
 Enter option numbers separated by spaces (e.g. 1 2 3): 1 2 3 4
 
-✔  Generated Password:
+>> Generated Password:
    gT7#mXp2@Lq5!Kn9
+   Strength : Very Strong
+   Entropy  : 104.8 bits
+   Tip: highlight the password above and press Ctrl+C to copy.
 
+---------------------------------------------
+View session history? (y/n): n
 Generate another password? (y/n): n
 
-Goodbye! Stay secure. 🔒
+Generated 1 password this session. Stay secure!
 ```
 
 ---
@@ -107,6 +112,9 @@ Goodbye! Stay secure. 🔒
 Simple_Password_Generator/
 ├── main.py          # Main application
 ├── requirements.txt # Dependencies (none)
+├── LICENSE          # MIT license
+├── CHANGELOG.md     # Version history
+├── .gitignore       # Git ignore rules
 └── README.md        # This file
 ```
 
