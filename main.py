@@ -8,6 +8,7 @@ __version__ = "1.0.0"
 __author__  = "tom-shaji"
 
 import io
+import math
 import random
 import string
 import sys
@@ -111,6 +112,16 @@ def get_character_options() -> dict[str, str]:
                 seen.add(idx)
 
     return selected
+
+
+def calculate_entropy(length: int, pool_size: int) -> float:
+    """
+    Calculate password entropy in bits: length * log2(pool_size).
+    Higher = harder to brute-force.
+    """
+    if pool_size <= 1:
+        return 0.0
+    return round(length * math.log2(pool_size), 1)
 
 
 def calculate_strength(password: str) -> str:
