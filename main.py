@@ -151,6 +151,7 @@ def main() -> None:
 
         # ── Step 4: go again? ───────────────────────────────────────────────
         print()
+        print_separator()
         if not get_yes_no("Generate another password?"):
             print(f"{GREEN}Goodbye! Stay secure.{RESET}\n")
             break
