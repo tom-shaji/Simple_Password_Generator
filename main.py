@@ -77,15 +77,8 @@ def get_character_options() -> dict[str, str]:
     Ask the user which character types to include.
     Returns a dict mapping label → character pool string.
     """
-    options = {
-        "Uppercase letters (A-Z)": string.ascii_uppercase,
-        "Lowercase letters (a-z)": string.ascii_lowercase,
-        "Numbers        (0-9)   ": string.digits,
-        "Special chars  (!@#…)  ": string.punctuation,
-    }
-
     print(f"\n{CYAN}Choose character types to include:{RESET}")
-    keys = list(options.keys())
+    keys = list(CHAR_POOLS.keys())
     for i, label in enumerate(keys, start=1):
         print(f"  {YELLOW}[{i}]{RESET} {label}")
 
@@ -117,7 +110,7 @@ def get_character_options() -> dict[str, str]:
         for idx in chosen_indices:
             if idx not in seen:
                 label = keys[idx]
-                selected[label] = options[label]
+                selected[label] = CHAR_POOLS[label]
                 seen.add(idx)
 
     return selected
