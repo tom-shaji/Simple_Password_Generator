@@ -190,7 +190,8 @@ def main() -> None:
         print()
         print_separator()
         if not get_yes_no("Generate another password?"):
-            print(f"{GREEN}Goodbye! Stay secure.{RESET}\n")
+            noun = "password" if count == 1 else "passwords"
+            print(f"{GREEN}Generated {count} {noun} this session. Stay secure!{RESET}\n")
             break
         print()
 
