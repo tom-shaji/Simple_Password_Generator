@@ -7,6 +7,7 @@ Run with: python main.py
 __version__ = "1.0.0"
 __author__  = "tom-shaji"
 
+import argparse
 import io
 import math
 import random
@@ -197,4 +198,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    _parser = argparse.ArgumentParser(description="Simple Password Generator")
+    _parser.add_argument(
+        "--version", action="version",
+        version=f"%(prog)s {__version__} by {__author__}"
+    )
+    _parser.parse_args()
     main()
