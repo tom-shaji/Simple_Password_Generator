@@ -7,16 +7,16 @@ No external libraries required — only Python's built-in `random` and `string` 
 
 ## Features
 
-- Choose a custom password length (minimum 4 characters)
-- Select any combination of character types:
-  - **Uppercase letters** (A–Z)
-  - **Lowercase letters** (a–z)
-  - **Numbers** (0–9)
-  - **Special characters** (!@#$%^&*…)
-- Every selected character type is guaranteed to appear at least once
-- Coloured terminal output for a pleasant user experience
-- Loop to generate multiple passwords in one session
-- Robust input validation with clear error messages
+| Feature | Details |
+|---------|---------|
+| Custom length | 4 – 128 characters |
+| Character pools | Uppercase, lowercase, digits, special chars |
+| Guaranteed inclusion | At least one char from every selected pool |
+| Strength indicator | Weak / Medium / Strong / Very Strong |
+| Entropy display | Bits of entropy per password |
+| Session counter | Tracks how many passwords you’ve generated |
+| Input validation | Clear error messages for all bad inputs |
+| Loop mode | Keep generating without restarting |
 
 ---
 
