@@ -175,11 +175,14 @@ def main() -> None:
         char_pools = get_character_options()
 
         # ── Step 3: generate & display ──────────────────────────────────────
-        password = generate_password(length, char_pools)
-        strength = calculate_strength(password)
+        password  = generate_password(length, char_pools)
+        strength  = calculate_strength(password)
+        pool_size = len(set("".join(char_pools.values())))
+        entropy   = calculate_entropy(length, pool_size)
         print(f"\n{GREEN}{BOLD}>> Generated Password:{RESET}")
         print(f"   {BOLD}{password}{RESET}")
-        print(f"   Strength : {strength}\n")
+        print(f"   Strength : {strength}")
+        print(f"   Entropy  : {CYAN}{entropy} bits{RESET}\n")
 
         # ── Step 4: go again? ───────────────────────────────────────────────
         print()
