@@ -35,6 +35,11 @@ BANNER = f"""{CYAN}{BOLD}
 """
 
 
+def get_yes_no(prompt: str) -> bool:
+    """Ask a yes/no question; return True for 'y'/'yes'."""
+    return input(f"{CYAN}{prompt} (y/n): {RESET}").strip().lower() in ("y", "yes")
+
+
 def get_password_length() -> int:
     """Prompt the user for a valid password length (>= 4)."""
     while True:
