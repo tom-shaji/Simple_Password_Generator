@@ -35,6 +35,11 @@ BANNER = f"""{CYAN}{BOLD}
 """
 
 
+def print_separator() -> None:
+    """Print a visual divider line to the terminal."""
+    print(f"{CYAN}" + "-" * 45 + f"{RESET}")
+
+
 def get_yes_no(prompt: str) -> bool:
     """Ask a yes/no question; return True for 'y'/'yes'."""
     return input(f"{CYAN}{prompt} (y/n): {RESET}").strip().lower() in ("y", "yes")
