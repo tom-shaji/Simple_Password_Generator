@@ -178,7 +178,8 @@ def generate_password(length: int, char_pools: dict[str, str]) -> str:
 
 def main() -> None:
     print(BANNER)
-    count = 0  # passwords generated this session
+    count   = 0   # passwords generated this session
+    history: list[str] = []  # all passwords from this session
 
     while True:
         # ── Step 1: length ──────────────────────────────────────────────────
@@ -190,6 +191,7 @@ def main() -> None:
         # ── Step 3: generate & display ──────────────────────────────────────
         count    += 1
         password  = generate_password(length, char_pools)
+        history.append(password)
         strength  = calculate_strength(password)
         pool_size = len(set("".join(char_pools.values())))
         entropy   = calculate_entropy(length, pool_size)
