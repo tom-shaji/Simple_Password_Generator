@@ -30,6 +30,14 @@ RESET  = "\033[0m"
 MIN_LENGTH = 4    # minimum allowed password length
 MAX_LENGTH = 128  # maximum allowed password length
 
+# ── Available character pools ───────────────────────────────────────────────────
+CHAR_POOLS: dict[str, str] = {
+    "Uppercase letters (A-Z)": string.ascii_uppercase,
+    "Lowercase letters (a-z)": string.ascii_lowercase,
+    "Numbers        (0-9)   ": string.digits,
+    "Special chars  (!@#~)  ": string.punctuation,
+}
+
 BANNER = f"""{CYAN}{BOLD}
 +---------------------------------------+
 |       [*]  Password Generator         |
