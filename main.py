@@ -193,7 +193,9 @@ def main() -> None:
         print(f"\n{GREEN}{BOLD}>> Generated Password:{RESET}")
         print(f"   {BOLD}{password}{RESET}")
         print(f"   Strength : {strength}")
-        print(f"   Entropy  : {CYAN}{entropy} bits{RESET}\n")
+        print(f"   Entropy  : {CYAN}{entropy} bits{RESET}")
+        copy_hint()
+        print()
 
         # ── Step 4: go again? ───────────────────────────────────────────────
         print()
