@@ -69,6 +69,9 @@ def get_password_length() -> int:
         if not raw.isdigit():
             print(f"{RED}✖  Please enter a positive whole number.{RESET}")
             continue
+        if len(raw) > 1 and raw[0] == "0":  # reject "007"-style inputs
+            print(f"{RED}✖  Please enter a positive whole number without leading zeros.{RESET}")
+            continue
         length = int(raw)
         if length < MIN_LENGTH:
             print(f"{RED}✖  Length must be at least {MIN_LENGTH} characters.{RESET}")
