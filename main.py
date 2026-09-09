@@ -165,8 +165,10 @@ def main() -> None:
 
         # ── Step 3: generate & display ──────────────────────────────────────
         password = generate_password(length, char_pools)
+        strength = calculate_strength(password)
         print(f"\n{GREEN}{BOLD}>> Generated Password:{RESET}")
-        print(f"   {BOLD}{password}{RESET}\n")
+        print(f"   {BOLD}{password}{RESET}")
+        print(f"   Strength : {strength}\n")
 
         # ── Step 4: go again? ───────────────────────────────────────────────
         print()
