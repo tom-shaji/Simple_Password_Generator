@@ -112,6 +112,23 @@ Simple_Password_Generator/
 
 ---
 
+## Entropy
+
+Entropy measures how unpredictable a password is:
+
+```
+entropy (bits) = length × log₂(pool_size)
+```
+
+| Entropy | Security Level |
+|---------|---------------|
+| < 40 bits | Very weak |
+| 40 – 60 bits | Acceptable |
+| 60 – 80 bits | Strong |
+| > 80 bits | Very strong |
+
+---
+
 ## Strength Indicator
 
 Passwords are scored on length and character variety:
