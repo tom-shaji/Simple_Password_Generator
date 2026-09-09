@@ -176,6 +176,17 @@ def generate_password(length: int, char_pools: dict[str, str]) -> str:
     return "".join(password_chars)
 
 
+def show_history(history: list[str]) -> None:
+    """Print all passwords generated so far this session."""
+    if not history:
+        print(f"{YELLOW}No passwords generated yet this session.{RESET}\n")
+        return
+    print(f"\n{CYAN}{BOLD}Session History ({len(history)} total):{RESET}")
+    for i, pw in enumerate(history, start=1):
+        print(f"  {YELLOW}[{i:>2}]{RESET} {pw}")
+    print()
+
+
 def main() -> None:
     print(BANNER)
     count   = 0   # passwords generated this session
