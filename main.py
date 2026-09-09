@@ -176,6 +176,16 @@ def generate_password(length: int, char_pools: dict[str, str]) -> str:
     return "".join(password_chars)
 
 
+def format_output(password: str, strength: str, entropy: float) -> str:
+    """Return a formatted string block showing password details."""
+    return "\n".join([
+        f"\n{GREEN}{BOLD}>> Generated Password:{RESET}",
+        f"   {BOLD}{password}{RESET}",
+        f"   Strength : {strength}",
+        f"   Entropy  : {CYAN}{entropy} bits{RESET}",
+    ])
+
+
 def show_history(history: list[str]) -> None:
     """Print all passwords generated so far this session."""
     if not history:
@@ -206,10 +216,7 @@ def main() -> None:
         strength  = calculate_strength(password)
         pool_size = len(set("".join(char_pools.values())))
         entropy   = calculate_entropy(length, pool_size)
-        print(f"\n{GREEN}{BOLD}>> Generated Password:{RESET}")
-        print(f"   {BOLD}{password}{RESET}")
-        print(f"   Strength : {strength}")
-        print(f"   Entropy  : {CYAN}{entropy} bits{RESET}")
+        print(format_output(password, strength, entropy))
         copy_hint()
         print()
 
