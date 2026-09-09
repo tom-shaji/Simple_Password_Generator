@@ -113,6 +113,25 @@ def get_character_options() -> dict[str, str]:
     return selected
 
 
+def calculate_strength(password: str) -> str:
+    """
+    Return a colour-coded strength label.
+    Scoring is based on length and character-type variety.
+    """
+    score = 0
+    if len(password) >= 8:  score += 1
+    if len(password) >= 12: score += 1
+    if len(password) >= 16: score += 1
+    if any(c.isupper() for c in password):              score += 1
+    if any(c.islower() for c in password):              score += 1
+    if any(c.isdigit() for c in password):              score += 1
+    if any(c in string.punctuation for c in password): score += 1
+    if score <= 2: return f"{RED}Weak{RESET}"
+    if score <= 4: return f"{YELLOW}Medium{RESET}"
+    if score <= 5: return f"{GREEN}Strong{RESET}"
+    return f"{CYAN}Very Strong{RESET}"
+
+
 def generate_password(length: int, char_pools: dict[str, str]) -> str:
     """
     Generate a random password of `length` characters.
