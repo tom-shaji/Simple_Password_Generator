@@ -21,6 +21,9 @@ RED    = "\033[91m"
 BOLD   = "\033[1m"
 RESET  = "\033[0m"
 
+# ── Configuration ──────────────────────────────────────────────────────────────
+MIN_LENGTH = 4   # minimum allowed password length
+
 BANNER = f"""{CYAN}{BOLD}
 +---------------------------------------+
 |       [*]  Password Generator         |
@@ -31,13 +34,13 @@ BANNER = f"""{CYAN}{BOLD}
 def get_password_length() -> int:
     """Prompt the user for a valid password length (>= 4)."""
     while True:
-        raw = input(f"{CYAN}Enter desired password length (min 4): {RESET}").strip()
+        raw = input(f"{CYAN}Enter desired password length (min {MIN_LENGTH}): {RESET}").strip()
         if not raw.isdigit():
             print(f"{RED}✖  Please enter a positive whole number.{RESET}")
             continue
         length = int(raw)
-        if length < 4:
-            print(f"{RED}✖  Length must be at least 4 characters.{RESET}")
+        if length < MIN_LENGTH:
+            print(f"{RED}✖  Length must be at least {MIN_LENGTH} characters.{RESET}")
             continue
         return length
 
