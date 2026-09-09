@@ -145,14 +145,11 @@ def main() -> None:
         print(f"   {BOLD}{password}{RESET}\n")
 
         # ── Step 4: go again? ───────────────────────────────────────────────
-        again = input(
-            f"{CYAN}Generate another password? (y/n): {RESET}"
-        ).strip().lower()
         print()
-
-        if again not in ("y", "yes"):
+        if not get_yes_no("Generate another password?"):
             print(f"{GREEN}Goodbye! Stay secure.{RESET}\n")
             break
+        print()
 
 
 if __name__ == "__main__":
